@@ -10,10 +10,10 @@
 
 
 <!-- ========= HTml ========= -->
-<di class="center">
+<div class="center">
     <div id="banner"><span>Your local time</span></div>
     <div id="clock"></div>
-  </di>
+  </div>
 <!-- ========= HTml ========= -->
 
 
@@ -31,13 +31,19 @@
         align-items: center;
         flex-direction: column;
       }
+      #banner{
+        font-size: 24px;
+        font-weight: 700;
+      }
       #clock {
         font-size: 40px;
         background-color: orange;
         padding: 20px 50px;
         margin-top: 10px;
         border-radius: 10px;
+        color: black;
       }
+
 </style>
 <!-- ========= Css ========= -->
 
@@ -45,6 +51,13 @@
 
 <!-- ========= jAVASCRIPT ========= -->
 <script>
+  
+  const clock = document.getElementById('clock')
+  
+setInterval(() => {
+  let date = new Date()
+clock.innerHTML = date.toLocaleTimeString();  
+}, 1000);
 
 </script>
 <!-- ========= jAVASCRIPT ========= -->
