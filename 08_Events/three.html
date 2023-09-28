@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async in JavaScript</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+    <!-- Note:: JavaScript is a synchronous language, Single Threaded -->    
+
+    <!-- =============== HTml ================ -->
+  <h1 id="first">JavaScript</h1>
+  <!-- <h2>-setTimeOut & clearTimeout-</h2> -->
+  <button id="stop">stop</button>
+
+
+     <!-- =============== HTml ================ -->
+
+
+<!-- =============== Css ================ -->
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    button{
+        background-color: orangered;
+        color: white;
+        padding: 10px 20px;
+        font-size: 22px;
+        border-radius: 10px;
+    }
+</style>
+<!-- =============== Css ================ -->
+
+
+<!-- =============== jAVAscript ================ -->
+<script>
+const sayDate = function(str){
+    console.log(str, Date.now());
+}
+const intervalId = setInterval(sayDate, 1000, "hi"); //now the date prints every seconds infinite until we stop it 
+clearInterval(intervalId)
+
+</script>
+<!-- =============== jAVAscript ================ -->
+
+
+
+</body>
+</html>
