@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async in JavaScript</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+    <!-- Note:: JavaScript is a synchronous language, Single Threaded -->    
+
+    <!-- =============== HTml ================ -->
+  <h1 id="first">Async in Js</h1>
+  <h2>-setTimeOut & clearTimeout-</h2>
+  <button id="stop">stop</button>
+
+
+     <!-- =============== HTml ================ -->
+
+
+<!-- =============== Css ================ -->
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    button{
+        background-color: orangered;
+        color: white;
+        padding: 10px 20px;
+        font-size: 22px;
+        border-radius: 10px;
+    }
+</style>
+<!-- =============== Css ================ -->
+
+
+<!-- =============== jAVAscript ================ -->
+<script>
+// const sayHaider = () => {
+//     console.log("hey haider!");
+// }
+// setTimeout(sayHaider, 3000);  //this case we are providing 'sayHaider' function as  a reference to setTimeOut
+
+const changeText = ()=>{
+   let h1 =  document.querySelector('#first');
+    first.innerHTML = 'Sync in Js'
+}
+const changeMe = setTimeout(changeText, 7000);  
+
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)  //this stops the execution of setTimeout we used before
+    console.log('stop');
+})
+
+
+</script>
+<!-- =============== jAVAscript ================ -->
+
+
+
+</body>
+</html>
