@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JavaScript</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+    <!-- =============== HTml ================ -->
+    <h2>Amazing Images</h2>
+    
+<ul id="images">
+    <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+    <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img width="200px" id="owl"  src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+    <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+</ul>
+<!-- =============== HTml ================ -->
+
+
+<!-- =============== Css ================ -->
+<!-- =============== Css ================ -->
+
+
+<!-- =============== jAVAscript ================ -->
+<script>
+    
+    //attachEvent    --- this is used in old Javascript
+    //jQuery-on    --- this is used in old Javascript
+    
+    //----some Event methods-----
+    
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    
+
+    //----------- sTUDY bubbling and capturing to for better understanding---------
+    
+    //bubbling works from bottom to top  ===  if we assign "false" this is byDefault 
+    //= in this case the first value we get is `Owl: Hey dude don't touch me!`   then the other one
+    
+    // document.getElementById('images').addEventListener('click', function(){
+    //     console.log('Clicked inside the ul.');
+    // },false)
+    
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(`Owl: Hey dude don't touch me!`);
+      //  // e.stopPropagation()  //this method stops the upper/parent execution ::in this case the `Clicked inside the ul` doesn't execute
+
+     // }, false) 
+    
+
+    //capturing  works from top to bottom === if we assign "true" 
+    //= in this case the first value we get is `Clicked inside the ul`   then the other one
+    
+    // document.getElementById('images').addEventListener('click', function(){
+    //  console.log('Clicked inside the ul.');
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(`Owl: Hey dude don't touch me!`);
+    //     // console.log(e);
+    // }, true) 
+
+    //--google 
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();  // with this method it doesn't redirect us to google.com
+        console.log('I clicked on google.com');
+    })
+
+
+//**   === Simple function of removing image when we clicked on it ==== 
+ document.querySelector('#images').addEventListener('click', function(e){
+     console.log(e.target.tagName);
+     if ( e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+         let removeIt = e.target.parentNode;
+         removeIt.remove();                               //method one for removing :: Recommended
+        //  removeIt.parentNode.removeChild(removeIt)      //method two :: Old method
+     }
+})
+</script>
+<!-- =============== jAVAscript ================ -->
+
+
+
+</body>
+</html>
