@@ -33,9 +33,10 @@ const userOne = new User("haider", true, 17);
 const userTwo = new User("ally", true, 23);
 const userThree = new User("haideraally", false, 73);
 
-// console.log(userOne);
+console.log(userOne);
 // console.log(userTwo);
 // console.log(userThree);
 
+console.log(userOne.constructor);
 
 
